@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CORTEXTERAFACTORY | Terascale Neural Manufacturing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Exo+2:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --factory-orange: #ff6b35;
+            --industrial-blue: #4d8bff;
+            --steel-gray: #5a6c7d;
+            --neon-yellow: #ffd700;
+            --dark-metal: #1a1a2e;
+            --concrete: #2d3047;
+            --assembly-line: rgba(255, 107, 53, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Exo 2', sans-serif;
+            background-color: var(--dark-metal);
+            color: #e0e0e0;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        /* 工厂背景效果 */
+        #factory-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.6;
+        }
+        
+        /* 工业网格背景 */
+        .industrial-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(90deg, var(--assembly-line) 1px, transparent 1px),
+                linear-gradient(var(--assembly-line) 1px, transparent 1px);
+            background-size: 80px 80px;
+            z-index: -2;
+            opacity: 0.2;
+        }
+        
+        /* 传送带动画 */
+        .conveyor-belt {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background: repeating-linear-gradient(
+                90deg,
+                var(--steel-gray),
+                var(--steel-gray) 20px,
+                var(--factory-orange) 20px,
+                var(--factory-orange) 40px
+            );
+            z-index: -1;
+            animation: conveyorMove 20s linear infinite;
+            opacity: 0.3;
+        }
+        
+        @keyframes conveyorMove {
+            0% { background-position: 0 0; }
+            100% { background-position: 80px 0; }
+        }
+        
+        /* 主容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* 头部 */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 0;
+            margin-bottom: 3rem;
+            border-bottom: 2px solid rgba(255, 107, 53, 0.5);
+            position: relative;
+        }
+        
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--factory-orange), var(--industrial-blue), var(--factory-orange));
+        }
+        
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        
+        .logo-cortex {
+            color: var(--industrial-blue);
+            text-shadow: 0 0 10px rgba(77, 139, 255, 0.5);
+        }
+        
+        .logo-tera {
+            color: var(--neon-yellow);
+            text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+        }
+        
+        .logo-factory {
+            color: var(--factory-orange);
+            text-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
+        }
+        
+        .domain-stats {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            background: rgba(42, 42, 62, 0.8);
+            padding: 0.8rem 1.2rem;
+            border-radius: 6px;
+            border-left: 4px solid var(--factory-orange);
+            border-right: 4px solid var(--industrial-blue);
+        }
+        
+        .stats-item {
+            display: flex;
+            align-items: center;
+            margin: 0.3rem 0;
+        }
+        
+        .stats-label {
+            color: var(--steel-gray);
+            margin-right: 0.5rem;
+        }
+        
+        .stats-value {
+            color: var(--neon-yellow);
+        }
+        
+        /* 主要内容 */
+        .main-content {
+            margin-top: 3rem;
+        }
+        
+        .hero-section {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 3rem;
+            background: rgba(42, 42, 62, 0.6);
+            border-radius: 12px;
+            border: 1px solid rgba(77, 139, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--factory-orange), var(--industrial-blue));
+        }
+        
+        .tagline {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .tagline-highlight {
+            color: var(--neon-yellow);
+            text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+        }
+        
+        .subtagline {
+            font-size: 1.2rem;
+            color: #b0b0b0;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            line-height: 1.5;
+        }
+        
+        /* 价格展示 */
+        .pricing-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 3rem;
+            margin: 4rem 0;
+        }
+        
+        .price-card {
+            background: linear-gradient(145deg, #25253c, #1d1e32);
+            border-radius: 16px;
+            padding: 2.5rem;
+            width: 100%;
+            max-width: 500px;
+            border: 2px solid rgba(77, 139, 255, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .price-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 107, 53, 0.1) 0%, transparent 70%);
+            z-index: 0;
+        }
+        
+        .price-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .price-title {
+            font-size: 1.5rem;
+            color: var(--industrial-blue);
+            margin-bottom: 1rem;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .price-amount {
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--neon-yellow);
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .price-note {
+            color: var(--steel-gray);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+        
+        .price-features {
+            list-style: none;
+            margin: 2rem 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .price-features li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(90, 108, 125, 0.3);
+            display: flex;
+            align-items: center;
+        }
+        
+        .price-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .feature-icon {
+            color: var(--factory-orange);
+            margin-right: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        /* CTA按钮 */
+        .cta-button {
+            display: block;
+            width: 100%;
+            background: linear-gradient(90deg, var(--factory-orange), var(--neon-yellow));
+            color: var(--dark-metal);
+            font-weight: 700;
+            font-size: 1.3rem;
+            padding: 1.3rem;
+            border-radius: 8px;
+            text-decoration: none;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+            position: relative;
+            z-index: 1;
+            font-family: 'Orbitron', sans-serif;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.6);
+        }
+        
+        .cta-button:active {
+            transform: translateY(-1px);
+        }
+        
+        /* 工厂能力展示 */
+        .capabilities {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 5rem 0;
+        }
+        
+        .capability {
+            background: rgba(42, 42, 62, 0.7);
+            border-radius: 10px;
+            padding: 2rem;
+            border-left: 4px solid var(--industrial-blue);
+            transition: all 0.3s ease;
+        }
+        
+        .capability:hover {
+            transform: translateY(-5px);
+            border-left-color: var(--factory-orange);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .capability-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--industrial-blue);
+        }
+        
+        .capability-title {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .capability-desc {
+            color: #b0b0b0;
+            line-height: 1.5;
+        }
+        
+        /* 联系方式 */
+        .contact-section {
+            background: rgba(29, 30, 50, 0.8);
+            border-radius: 12px;
+            padding: 3rem;
+            margin: 4rem 0;
+            text-align: center;
+            border: 1px solid rgba(255, 107, 53, 0.3);
+        }
+        
+        .contact-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--industrial-blue);
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .contact-subtitle {
+            color: var(--steel-gray);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .contact-email {
+            font-size: 1.5rem;
+            font-family: 'Orbitron', monospace;
+            color: var(--neon-yellow);
+            background: rgba(255, 215, 0, 0.1);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            display: inline-block;
+            margin: 1rem 0;
+            text-decoration: none;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .contact-email:hover {
+            background: rgba(255, 215, 0, 0.2);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+        }
+        
+        .contact-note {
+            margin-top: 1.5rem;
+            color: #888;
+            font-size: 0.9rem;
+        }
+        
+        /* 页脚 */
+        footer {
+            margin-top: 5rem;
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(90, 108, 125, 0.3);
+            color: #888;
+        }
+        
+        .footer-info {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .factory-status {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(0, 255, 0, 0.1);
+            color: #4cff4c;
+            border-radius: 20px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            margin-left: 1rem;
+            animation: statusPulse 2s infinite;
+        }
+        
+        @keyframes statusPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            header {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .logo {
+                font-size: 2rem;
+                text-align: center;
+            }
+            
+            .tagline {
+                font-size: 1.7rem;
+            }
+            
+            .price-amount {
+                font-size: 3.2rem;
+            }
+            
+            .capabilities {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-email {
+                font-size: 1.2rem;
+                padding: 0.8rem 1.5rem;
+                word-break: break-all;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 工厂网格背景 -->
+    <canvas id="factory-grid"></canvas>
+    <div class="industrial-bg"></div>
+    <div class="conveyor-belt"></div>
+    
+    <div class="container">
+        <header>
+            <div class="logo">
+                <span class="logo-cortex">CORTEX</span><span class="logo-tera">TERA</span><span class="logo-factory">FACTORY</span>
+            </div>
+            <div class="domain-stats">
+                <div class="stats-item">
+                    <span class="stats-label">DOMAIN:</span>
+                    <span class="stats-value">CORTEXTERAFACTORY.COM</span>
+                </div>
+                <div class="stats-item">
+                    <span class="stats-label">CHARACTERS:</span>
+                    <span class="stats-value">18 (TERASCALE)</span>
+                </div>
+                <div class="stats-item">
+                    <span class="stats-label">CONCEPT:</span>
+                    <span class="stats-value">NEURAL MASS PRODUCTION</span>
+                </div>
+            </div>
+        </header>
+        
+        <main class="main-content">
+            <section class="hero-section">
+                <h1 class="tagline">
+                    TERASCALE <span class="tagline-highlight">NEURAL MANUFACTURING</span> PLATFORM
+                </h1>
+                <p class="subtagline">
+                    Industrial-scale production of neural architectures. 
+                    Cortex + TeraFactory = Mass production of AI/ML models at unprecedented scale and efficiency.
+                </p>
+            </section>
+            
+            <section class="pricing-section">
+                <div class="price-card">
+                    <div class="price-header">
+                        <div class="price-title">TERAFACTORY DOMAIN ACQUISITION</div>
+                        <div class="price-amount">$9,999</div>
+                        <div class="price-note">STRATEGIC PRICING FOR INDUSTRIAL-SCALE VISION</div>
+                    </div>
+                    
+                    <ul class="price-features">
+                        <li>
+                            <span class="feature-icon">⚙️</span>
+                            <span>Full ownership of CortexTeraFactory.com</span>
+                        </li>
+                        <li>
+                            <span class="feature-icon">🏭</span>
+                            <span>Terascale neural manufacturing concept rights</span>
+                        </li>
+                        <li>
+                            <span class="feature-icon">📊</span>
+                            <span>Industrial production blueprint for AI/ML models</span>
+                        </li>
+                        <li>
+                            <span class="feature-icon">🔧</span>
+                            <span>Mass production workflow documentation</span>
+                        </li>
+                        <li>
+                            <span class="feature-icon">🚀</span>
+                            <span>Priority access to future industrial AI concepts</span>
+                        </li>
+                    </ul>
+                    
+                    <button class="cta-button" id="acquireButton">
+                        INITIATE INDUSTRIAL ACQUISITION
+                    </button>
+                </div>
+            </section>
+            
+            <section class="capabilities">
+                <div class="capability">
+                    <div class="capability-icon">🏗️</div>
+                    <div class="capability-title">NEURAL ASSEMBLY LINES</div>
+                    <div class="capability-desc">
+                        Parallel production of thousands of neural networks simultaneously. 
+                        Modular architecture design for rapid iteration and deployment.
+                    </div>
+                </div>
+                <div class="capability">
+                    <div class="capability-icon">📈</div>
+                    <div class="capability-title">TERASCALE THROUGHPUT</div>
+                    <div class="capability-desc">
+                        Process petabytes of training data daily. 
+                        Generate and validate millions of model variations with automated quality control.
+                    </div>
+                </div>
+                <div class="capability">
+                    <div class="capability-icon">🔬</div>
+                    <div class="capability-title">INDUSTRIAL OPTIMIZATION</div>
+                    <div class="capability-desc">
+                        Factory-floor inspired optimization algorithms. 
+                        Minimize computational waste while maximizing model performance and efficiency.
+                    </div>
+                </div>
+            </section>
+            
+            <section class="contact-section" id="contact">
+                <div class="contact-title">FACTORY CONTROL ROOM ACCESS</div>
+                <div class="contact-subtitle">DIRECT LINE TO INDUSTRIAL ARCHITECT</div>
+                <a href="mailto:joshua369x@gmail.com" class="contact-email">JOSHUA369X@GMAIL.COM</a>
+                <div class="contact-note">
+                    24/7 PRODUCTION LINE MONITORING • INDUSTRIAL-GRADE ENCRYPTION • BULK ACQUISITION INQUIRIES WELCOME
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <div class="footer-info">
+                CORTEXTERAFACTORY.COM | TERASCALE NEURAL MANUFACTURING INTERFACE
+            </div>
+            <div class="footer-info">
+                DOMAIN STATUS: <span class="factory-status">PRODUCTION READY • ASSEMBLY LINE ACTIVE</span>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // 工厂网格背景绘制
+        const canvas = document.getElementById('factory-grid');
+        const ctx = canvas.getContext('2d');
+        
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+        
+        // 工厂网格点
+        class FactoryNode {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.size = Math.random() * 4 + 2;
+                this.color = Math.random() > 0.5 ? 'rgba(255, 107, 53, 0.7)' : 'rgba(77, 139, 255, 0.7)';
+                this.pulse = Math.random() * Math.PI * 2;
+                this.speed = Math.random() * 0.03 + 0.01;
+                this.connections = [];
+            }
+            
+            update() {
+                this.pulse += this.speed;
+                if (this.pulse > Math.PI * 2) this.pulse = 0;
+            }
+            
+            draw() {
+                const pulseSize = Math.sin(this.pulse) * 2;
+                
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size + pulseSize, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+                
+                // 绘制连接线
+                this.connections.forEach(target => {
+                    ctx.beginPath();
+                    ctx.moveTo(this.x, this.y);
+                    ctx.lineTo(target.x, target.y);
+                    
+                    // 根据距离调整透明度
+                    const dx = this.x - target.x;
+                    const dy = this.y - target.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    const opacity = Math.max(0, 0.5 - distance / 400);
+                    
+                    ctx.strokeStyle = `rgba(77, 139, 255, ${opacity})`;
+                    ctx.lineWidth = 1;
+                    ctx.stroke();
+                });
+            }
+        }
+        
+        // 创建工厂节点
+        const nodes = [];
+        const nodeCount = Math.min(40, Math.floor((canvas.width * canvas.height) / 30000));
+        
+        for (let i = 0; i < nodeCount; i++) {
+            nodes.push(new FactoryNode(
+                Math.random() * canvas.width,
+                Math.random() * canvas.height
+            ));
+        }
+        
+        // 创建节点之间的连接（模拟工厂流水线）
+        nodes.forEach((node, index) => {
+            // 每个节点连接2-4个其他节点
+            const connectionCount = Math.floor(Math.random() * 3) + 2;
+            for (let i = 0; i < connectionCount; i++) {
+                const targetIndex = Math.floor(Math.random() * nodes.length);
+                if (targetIndex !== index && !node.connections.includes(nodes[targetIndex])) {
+                    node.connections.push(nodes[targetIndex]);
+                }
+            }
+        });
+        
+        // 添加一些移动的"产品"在流水线上
+        class Product {
+            constructor() {
+                this.path = [];
+                this.progress = 0;
+                this.speed = Math.random() * 0.002 + 0.001;
+                this.size = Math.random() * 6 + 4;
+                this.color = Math.random() > 0.5 ? 'rgba(255, 215, 0, 0.9)' : 'rgba(255, 107, 53, 0.9)';
+                this.generatePath();
+            }
+            
+            generatePath() {
+                this.path = [];
+                // 随机选择3-6个节点作为路径
+                const pathLength = Math.floor(Math.random() * 4) + 3;
+                for (let i = 0; i < pathLength; i++) {
+                    const randomNode = nodes[Math.floor(Math.random() * nodes.length)];
+                    this.path.push({x: randomNode.x, y: randomNode.y});
+                }
+            }
+            
+            update() {
+                this.progress += this.speed;
+                if (this.progress >= 1) {
+                    this.progress = 0;
+                    this.generatePath();
+                }
+            }
+            
+            draw() {
+                // 计算当前位置
+                const segment = Math.floor(this.progress * (this.path.length - 1));
+                const segmentProgress = (this.progress * (this.path.length - 1)) - segment;
+                
+                if (segment < this.path.length - 1) {
+                    const start = this.path[segment];
+                    const end = this.path[segment + 1];
+                    
+                    const x = start.x + (end.x - start.x) * segmentProgress;
+                    const y = start.y + (end.y - start.y) * segmentProgress;
+                    
+                    // 绘制产品
+                    ctx.beginPath();
+                    ctx.arc(x, y, this.size, 0, Math.PI * 2);
+                    ctx.fillStyle = this.color;
+                    ctx.fill();
+                    
+                    // 产品发光效果
+                    ctx.beginPath();
+                    ctx.arc(x, y, this.size + 3, 0, Math.PI * 2);
+                    ctx.strokeStyle = this.color.replace('0.9', '0.3');
+                    ctx.lineWidth = 2;
+                    ctx.stroke();
+                }
+            }
+        }
+        
+        // 创建产品
+        const products = [];
+        for (let i = 0; i < 8; i++) {
+            products.push(new Product());
+        }
+        
+        // 动画循环
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // 更新和绘制节点
+            nodes.forEach(node => {
+                node.update();
+                node.draw();
+            });
+            
+            // 更新和绘制产品
+            products.forEach(product => {
+                product.update();
+                product.draw();
+            });
+            
+            requestAnimationFrame(animate);
+        }
+        
+        // 等待页面加载后开始动画
+        setTimeout(() => {
+            resizeCanvas();
+            animate();
+        }, 100);
+        
+        // CTA按钮交互
+        const acquireButton = document.getElementById('acquireButton');
+        acquireButton.addEventListener('click', function() {
+            const originalText = this.textContent;
+            this.textContent = 'CONNECTING TO FACTORY CONTROL...';
+            this.style.background = 'linear-gradient(90deg, var(--industrial-blue), var(--factory-orange))';
+            
+            setTimeout(() => {
+                this.textContent = 'REDIRECTING TO COMMUNICATION CHANNEL...';
+                
+                setTimeout(() => {
+                    window.location.href = 'mailto:joshua369x@gmail.com?subject=CortexTeraFactory.com%20Acquisition%20Inquiry&body=I%20am%20interested%20in%20acquiring%20CortexTeraFactory.com%20for%20industrial-scale%20neural%20manufacturing.';
+                    
+                    setTimeout(() => {
+                        this.textContent = originalText;
+                        this.style.background = 'linear-gradient(90deg, var(--factory-orange), var(--neon-yellow))';
+                    }, 2000);
+                }, 1000);
+            }, 1500);
+        });
+        
+        // 邮箱交互
+        const contactEmail = document.querySelector('.contact-email');
+        contactEmail.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const originalText = this.textContent;
+            this.textContent = 'EMAIL COPIED TO CLIPBOARD ✓';
+            this.style.background = 'rgba(0, 255, 0, 0.2)';
+            this.style.color = '#4cff4c';
+            
+            // 复制到剪贴板
+            navigator.clipboard.writeText('joshua369x@gmail.com').then(() => {
+                setTimeout(() => {
+                    this.textContent = originalText;
+                    this.style.background = 'rgba(255, 215, 0, 0.1)';
+                    this.style.color = 'var(--neon-yellow)';
+                }, 2000);
+            });
+        });
+        
+        // 添加页面加载效果
+        window.addEventListener('load', () => {
+            document.querySelector('.logo').style.opacity = '1';
+            document.querySelector('.logo').style.transform = 'translateY(0)';
+            
+            // 为能力卡片添加延迟显示
+            const capabilities = document.querySelectorAll('.capability');
+            capabilities.forEach((cap, index) => {
+                setTimeout(() => {
+                    cap.style.opacity = '1';
+                    cap.style.transform = 'translateY(0)';
+                }, 300 + index * 200);
+            });
+        });
+    </script>
+</body>
+</html>
