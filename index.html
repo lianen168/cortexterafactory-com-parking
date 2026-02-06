@@ -3,832 +3,299 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CORTEXTERAFACTORY | Terascale Neural Manufacturing</title>
+    <meta name="description" content="For Sale: cortexterafactory.com - The premium domain for planet-scale, AGI-managed industrial operations and mass production in the new era of automation.">
+    <meta name="keywords" content="cortexterafactory, terafactory, gigafactory, AGI, cortex, large scale manufacturing, industrial automation, supply chain, robotics, tech domain, premium domain, domain for sale">
+    
+    <title>For Sale: CortexTerafactory.com - Planet-Scale AGI Manufacturing</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Exo+2:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
     <style>
         :root {
-            --factory-orange: #ff6b35;
-            --industrial-blue: #4d8bff;
-            --steel-gray: #5a6c7d;
-            --neon-yellow: #ffd700;
-            --dark-metal: #1a1a2e;
-            --concrete: #2d3047;
-            --assembly-line: rgba(255, 107, 53, 0.1);
+            --primary-color: #ff9a00; /* Industrial Orange */
+            --background-color: #1a1a1a;
+            --text-color: #d5d5d5;
+            --header-text-color: #ffffff;
+            --card-background: #2c2c2c;
+            --border-color: #444;
         }
-        
-        * {
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Exo 2', sans-serif;
-            background-color: var(--dark-metal);
-            color: #e0e0e0;
-            min-height: 100vh;
-            overflow-x: hidden;
-            position: relative;
-        }
-        
-        /* 工厂背景效果 */
-        #factory-grid {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            opacity: 0.6;
-        }
-        
-        /* 工业网格背景 */
-        .industrial-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                linear-gradient(90deg, var(--assembly-line) 1px, transparent 1px),
-                linear-gradient(var(--assembly-line) 1px, transparent 1px);
-            background-size: 80px 80px;
-            z-index: -2;
-            opacity: 0.2;
-        }
-        
-        /* 传送带动画 */
-        .conveyor-belt {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 40px;
-            background: repeating-linear-gradient(
-                90deg,
-                var(--steel-gray),
-                var(--steel-gray) 20px,
-                var(--factory-orange) 20px,
-                var(--factory-orange) 40px
-            );
-            z-index: -1;
-            animation: conveyorMove 20s linear infinite;
-            opacity: 0.3;
-        }
-        
-        @keyframes conveyorMove {
-            0% { background-position: 0 0; }
-            100% { background-position: 80px 0; }
-        }
-        
-        /* 主容器 */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-            position: relative;
-            z-index: 1;
-        }
-        
-        /* 头部 */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 2rem 0;
-            margin-bottom: 3rem;
-            border-bottom: 2px solid rgba(255, 107, 53, 0.5);
-            position: relative;
-        }
-        
-        header::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, var(--factory-orange), var(--industrial-blue), var(--factory-orange));
-        }
-        
-        .logo {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 900;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-        }
-        
-        .logo-cortex {
-            color: var(--industrial-blue);
-            text-shadow: 0 0 10px rgba(77, 139, 255, 0.5);
-        }
-        
-        .logo-tera {
-            color: var(--neon-yellow);
-            text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
-        }
-        
-        .logo-factory {
-            color: var(--factory-orange);
-            text-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
-        }
-        
-        .domain-stats {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.9rem;
-            background: rgba(42, 42, 62, 0.8);
-            padding: 0.8rem 1.2rem;
-            border-radius: 6px;
-            border-left: 4px solid var(--factory-orange);
-            border-right: 4px solid var(--industrial-blue);
-        }
-        
-        .stats-item {
-            display: flex;
-            align-items: center;
-            margin: 0.3rem 0;
-        }
-        
-        .stats-label {
-            color: var(--steel-gray);
-            margin-right: 0.5rem;
-        }
-        
-        .stats-value {
-            color: var(--neon-yellow);
-        }
-        
-        /* 主要内容 */
-        .main-content {
-            margin-top: 3rem;
-        }
-        
-        .hero-section {
-            text-align: center;
-            margin-bottom: 4rem;
-            padding: 3rem;
-            background: rgba(42, 42, 62, 0.6);
-            border-radius: 12px;
-            border: 1px solid rgba(77, 139, 255, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--factory-orange), var(--industrial-blue));
-        }
-        
-        .tagline {
-            font-size: 2.2rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.3;
-            font-family: 'Orbitron', sans-serif;
-        }
-        
-        .tagline-highlight {
-            color: var(--neon-yellow);
-            text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
-        }
-        
-        .subtagline {
-            font-size: 1.2rem;
-            color: #b0b0b0;
-            max-width: 800px;
-            margin: 0 auto 2rem;
-            line-height: 1.5;
-        }
-        
-        /* 价格展示 */
-        .pricing-section {
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 3rem;
-            margin: 4rem 0;
+            min-height: 100vh;
+            line-height: 1.7;
         }
-        
-        .price-card {
-            background: linear-gradient(145deg, #25253c, #1d1e32);
-            border-radius: 16px;
-            padding: 2.5rem;
-            width: 100%;
-            max-width: 500px;
-            border: 2px solid rgba(77, 139, 255, 0.3);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .price-card::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 107, 53, 0.1) 0%, transparent 70%);
-            z-index: 0;
-        }
-        
-        .price-header {
+
+        .container {
+            max-width: 1200px;
+            width: 90%;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: var(--background-color);
+            border: 1px solid var(--border-color);
             text-align: center;
-            margin-bottom: 2rem;
-            position: relative;
-            z-index: 1;
+        }
+
+        /* --- Header & Domain Name --- */
+        .domain-header {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        h1.domain-name {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: clamp(2rem, 6vw, 4.5rem);
+            margin: 0;
+            color: var(--header-text-color);
+            white-space: nowrap;
         }
         
-        .price-title {
-            font-size: 1.5rem;
-            color: var(--industrial-blue);
-            margin-bottom: 1rem;
-            font-family: 'Orbitron', sans-serif;
-            text-transform: uppercase;
+        .cortex-span {
+            animation: text-flicker 3s linear infinite;
+        }
+        
+        .com-span {
+            color: var(--primary-color);
+            animation: flash-power 1.5s ease-in-out infinite;
+        }
+
+        @keyframes text-flicker {
+            0%, 18%, 22%, 25%, 53%, 57%, 100% {
+                text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px var(--primary-color), 0 0 80px var(--primary-color), 0 0 90px var(--primary-color), 0 0 100px var(--primary-color);
+            }
+            20%, 24%, 55% { text-shadow: none; }
+        }
+        
+        @keyframes flash-power {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        h2.tagline {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            color: var(--text-color);
+            font-weight: 400;
+            margin: 1rem 0 0 0;
             letter-spacing: 1px;
         }
-        
-        .price-amount {
-            font-size: 4rem;
-            font-weight: 900;
-            color: var(--neon-yellow);
-            text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
-            line-height: 1;
-            margin-bottom: 0.5rem;
-            font-family: 'Orbitron', sans-serif;
+
+        /* --- Applications Section --- */
+        .applications {
+            margin: 3rem 0;
+            text-align: left;
         }
-        
-        .price-note {
-            color: var(--steel-gray);
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
+
+        .applications h3 {
+            text-align: center;
+            font-size: 1.8rem;
+            color: var(--header-text-color);
+            margin-bottom: 2rem;
+            font-weight: 700;
         }
-        
-        .price-features {
-            list-style: none;
-            margin: 2rem 0;
-            position: relative;
-            z-index: 1;
+
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
         }
-        
-        .price-features li {
-            padding: 0.8rem 0;
-            border-bottom: 1px solid rgba(90, 108, 125, 0.3);
+
+        .app-card {
+            background-color: var(--card-background);
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            transition: border-color 0.3s ease;
+        }
+        .app-card:hover {
+            border-color: var(--primary-color);
+        }
+
+        .app-card h4 {
+            font-family: 'Share Tech Mono', monospace;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            margin: 0 0 0.5rem 0;
             display: flex;
             align-items: center;
         }
-        
-        .price-features li:last-child {
-            border-bottom: none;
+        .app-card h4::before {
+            content: '>';
+            margin-right: 0.5rem;
+            font-weight: bold;
+        }
+
+        .app-card p {
+            font-size: 0.95rem;
+            margin: 0;
+            padding-left: 1.2rem;
         }
         
-        .feature-icon {
-            color: var(--factory-orange);
-            margin-right: 1rem;
-            font-size: 1.2rem;
-        }
-        
-        /* CTA按钮 */
-        .cta-button {
-            display: block;
-            width: 100%;
-            background: linear-gradient(90deg, var(--factory-orange), var(--neon-yellow));
-            color: var(--dark-metal);
-            font-weight: 700;
-            font-size: 1.3rem;
-            padding: 1.3rem;
-            border-radius: 8px;
-            text-decoration: none;
-            text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-top: 2rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
-            position: relative;
-            z-index: 1;
-            font-family: 'Orbitron', sans-serif;
-            border: none;
-            cursor: pointer;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.6);
-        }
-        
-        .cta-button:active {
-            transform: translateY(-1px);
-        }
-        
-        /* 工厂能力展示 */
-        .capabilities {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 5rem 0;
-        }
-        
-        .capability {
-            background: rgba(42, 42, 62, 0.7);
-            border-radius: 10px;
+        /* --- Footer & CTA --- */
+        .footer-cta {
+            margin-top: 4rem;
             padding: 2rem;
-            border-left: 4px solid var(--industrial-blue);
-            transition: all 0.3s ease;
+            background-color: var(--card-background);
+            border-top: 2px solid var(--primary-color);
         }
-        
-        .capability:hover {
-            transform: translateY(-5px);
-            border-left-color: var(--factory-orange);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+
+        .price {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: clamp(2.5rem, 6vw, 3.5rem);
+            font-weight: 700;
+            color: var(--header-text-color);
+            margin-bottom: 0.25rem;
         }
-        
-        .capability-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--industrial-blue);
-        }
-        
-        .capability-title {
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-            color: white;
-            font-family: 'Orbitron', sans-serif;
-        }
-        
-        .capability-desc {
-            color: #b0b0b0;
-            line-height: 1.5;
-        }
-        
-        /* 联系方式 */
-        .contact-section {
-            background: rgba(29, 30, 50, 0.8);
-            border-radius: 12px;
-            padding: 3rem;
-            margin: 4rem 0;
-            text-align: center;
-            border: 1px solid rgba(255, 107, 53, 0.3);
-        }
-        
-        .contact-title {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: var(--industrial-blue);
-            font-family: 'Orbitron', sans-serif;
-        }
-        
-        .contact-subtitle {
-            color: var(--steel-gray);
-            margin-bottom: 2rem;
+
+        .installments {
             font-size: 1.1rem;
+            margin-bottom: 2rem;
         }
         
-        .contact-email {
-            font-size: 1.5rem;
-            font-family: 'Orbitron', monospace;
-            color: var(--neon-yellow);
-            background: rgba(255, 215, 0, 0.1);
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            display: inline-block;
-            margin: 1rem 0;
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 28px;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1.1rem;
             text-decoration: none;
-            border: 1px solid rgba(255, 215, 0, 0.3);
+            cursor: pointer;
             transition: all 0.3s ease;
+            border: 2px solid var(--primary-color);
         }
-        
-        .contact-email:hover {
-            background: rgba(255, 215, 0, 0.2);
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+
+        .btn-buy {
+            background-color: var(--primary-color);
+            color: var(--background-color);
         }
-        
-        .contact-note {
-            margin-top: 1.5rem;
-            color: #888;
-            font-size: 0.9rem;
+        .btn-buy:hover {
+            background-color: transparent;
+            color: var(--primary-color);
         }
-        
-        /* 页脚 */
-        footer {
-            margin-top: 5rem;
-            padding: 2rem 0;
-            text-align: center;
-            border-top: 1px solid rgba(90, 108, 125, 0.3);
-            color: #888;
+
+        .btn-contact {
+            background-color: transparent;
+            color: var(--primary-color);
         }
-        
-        .footer-info {
-            margin-top: 1rem;
-            font-size: 0.9rem;
+        .btn-contact:hover {
+            background-color: var(--primary-color);
+            color: var(--background-color);
         }
-        
-        .factory-status {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            background: rgba(0, 255, 0, 0.1);
-            color: #4cff4c;
-            border-radius: 20px;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.9rem;
-            margin-left: 1rem;
-            animation: statusPulse 2s infinite;
-        }
-        
-        @keyframes statusPulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
-        }
-        
-        /* 响应式设计 */
+
+        /* Responsive Design */
         @media (max-width: 768px) {
             .container {
+                width: 95%;
                 padding: 1rem;
             }
-            
-            header {
-                flex-direction: column;
-                gap: 1.5rem;
-            }
-            
-            .logo {
-                font-size: 2rem;
-                text-align: center;
-            }
-            
-            .tagline {
-                font-size: 1.7rem;
-            }
-            
-            .price-amount {
-                font-size: 3.2rem;
-            }
-            
-            .capabilities {
+            .app-grid {
                 grid-template-columns: 1fr;
             }
-            
-            .contact-email {
-                font-size: 1.2rem;
-                padding: 0.8rem 1.5rem;
-                word-break: break-all;
+             .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .btn {
+                width: 80%;
+                text-align: center;
             }
         }
+
     </style>
 </head>
 <body>
-    <!-- 工厂网格背景 -->
-    <canvas id="factory-grid"></canvas>
-    <div class="industrial-bg"></div>
-    <div class="conveyor-belt"></div>
-    
+
     <div class="container">
-        <header>
-            <div class="logo">
-                <span class="logo-cortex">CORTEX</span><span class="logo-tera">TERA</span><span class="logo-factory">FACTORY</span>
-            </div>
-            <div class="domain-stats">
-                <div class="stats-item">
-                    <span class="stats-label">DOMAIN:</span>
-                    <span class="stats-value">CORTEXTERAFACTORY.COM</span>
-                </div>
-                <div class="stats-item">
-                    <span class="stats-label">CHARACTERS:</span>
-                    <span class="stats-value">18 (TERASCALE)</span>
-                </div>
-                <div class="stats-item">
-                    <span class="stats-label">CONCEPT:</span>
-                    <span class="stats-value">NEURAL MASS PRODUCTION</span>
-                </div>
-            </div>
+        <header class="domain-header">
+            <h1 class="domain-name">
+                <span class="cortex-span">CortexTerafactory</span><span class="com-span">.com</span>
+            </h1>
+            <h2 class="tagline">The Architecture for Planet-Scale Intelligent Production</h2>
         </header>
         
-        <main class="main-content">
-            <section class="hero-section">
-                <h1 class="tagline">
-                    TERASCALE <span class="tagline-highlight">NEURAL MANUFACTURING</span> PLATFORM
-                </h1>
-                <p class="subtagline">
-                    Industrial-scale production of neural architectures. 
-                    Cortex + TeraFactory = Mass production of AI/ML models at unprecedented scale and efficiency.
-                </p>
-            </section>
-            
-            <section class="pricing-section">
-                <div class="price-card">
-                    <div class="price-header">
-                        <div class="price-title">TERAFACTORY DOMAIN ACQUISITION</div>
-                        <div class="price-amount">$9,999</div>
-                        <div class="price-note">STRATEGIC PRICING FOR INDUSTRIAL-SCALE VISION</div>
-                    </div>
-                    
-                    <ul class="price-features">
-                        <li>
-                            <span class="feature-icon">⚙️</span>
-                            <span>Full ownership of CortexTeraFactory.com</span>
-                        </li>
-                        <li>
-                            <span class="feature-icon">🏭</span>
-                            <span>Terascale neural manufacturing concept rights</span>
-                        </li>
-                        <li>
-                            <span class="feature-icon">📊</span>
-                            <span>Industrial production blueprint for AI/ML models</span>
-                        </li>
-                        <li>
-                            <span class="feature-icon">🔧</span>
-                            <span>Mass production workflow documentation</span>
-                        </li>
-                        <li>
-                            <span class="feature-icon">🚀</span>
-                            <span>Priority access to future industrial AI concepts</span>
-                        </li>
-                    </ul>
-                    
-                    <button class="cta-button" id="acquireButton">
-                        INITIATE INDUSTRIAL ACQUISITION
-                    </button>
-                </div>
-            </section>
-            
-            <section class="capabilities">
-                <div class="capability">
-                    <div class="capability-icon">🏗️</div>
-                    <div class="capability-title">NEURAL ASSEMBLY LINES</div>
-                    <div class="capability-desc">
-                        Parallel production of thousands of neural networks simultaneously. 
-                        Modular architecture design for rapid iteration and deployment.
-                    </div>
-                </div>
-                <div class="capability">
-                    <div class="capability-icon">📈</div>
-                    <div class="capability-title">TERASCALE THROUGHPUT</div>
-                    <div class="capability-desc">
-                        Process petabytes of training data daily. 
-                        Generate and validate millions of model variations with automated quality control.
-                    </div>
-                </div>
-                <div class="capability">
-                    <div class="capability-icon">🔬</div>
-                    <div class="capability-title">INDUSTRIAL OPTIMIZATION</div>
-                    <div class="capability-desc">
-                        Factory-floor inspired optimization algorithms. 
-                        Minimize computational waste while maximizing model performance and efficiency.
-                    </div>
-                </div>
-            </section>
-            
-            <section class="contact-section" id="contact">
-                <div class="contact-title">FACTORY CONTROL ROOM ACCESS</div>
-                <div class="contact-subtitle">DIRECT LINE TO INDUSTRIAL ARCHITECT</div>
-                <a href="mailto:joshua369x@gmail.com" class="contact-email">JOSHUA369X@GMAIL.COM</a>
-                <div class="contact-note">
-                    24/7 PRODUCTION LINE MONITORING • INDUSTRIAL-GRADE ENCRYPTION • BULK ACQUISITION INQUIRIES WELCOME
+        <main>
+            <section class="applications">
+                <h3>This Domain is Engineered for 12 High-Impact Fields:</h3>
+                <div class="app-grid">
+                    <article class="app-card"><h4>Global Logistics Cortex</h4><p>An AI that manages and optimizes the entire planetary supply chain, from raw material extraction to final delivery.</p></article>
+                    <article class="app-card"><h4>Automated City Construction</h4><p>A system that uses fleets of robots, managed by a central AI, to fabricate and assemble entire city districts.</p></article>
+                    <article class="app-card"><h4>Planetary Resource Processing</h4><p>Massive-scale factories for refining asteroid-mined materials or terrestrial resources, fully automated by a cognitive core.</p></article>
+                    <article class="app-card"><h4>AI-Managed Energy Grids</h4><p>A "factory" that produces and distributes energy on a continental scale, with an AI cortex ensuring stability and efficiency.</p></article>
+                    <article class="app-card"><h4>Mass-Scale Carbon Capture</h4><p>Vast industrial facilities designed to capture carbon from the atmosphere, with operations optimized by a central intelligence.</p></article>
+                    <article class="app-card"><h4>Global Food Synthesis</h4><p>Automated terafactories for producing synthetic proteins or vertical farming at a scale capable of feeding nations.</p></article>
+                    <article class="app-card"><h4>Continental Water Desalination</h4><p>A network of massive, AI-controlled desalination plants working in concert to solve regional water crises.</p></article>
+                    <article class="app-card"><h4>Autonomous EV Production</h4><p>The next step beyond a Gigafactory—a Terafactory where an AI manages the end-to-end production of millions of electric vehicles.</p></article>
+                    <article class="app-card"><h4>Spacecraft Mass Production</h4><p>An orbital or terrestrial factory for constructing fleets of standardized spacecraft for colonizing the solar system.</p></article>
+                    <article class="app-card"><h4>Next-Gen Data Center Fab</h4><p>A factory that produces and assembles the physical infrastructure for data centers at an unprecedented speed and scale.</p></article>
+                    <article class="app-card"><h4>Automated Materials Science</h4><p>A facility where an AI designs, synthesizes, and tests millions of new material compounds for breakthrough discoveries.</p></article>
+                    <article class="app-card"><h4>Geo-Engineering Systems</h4><p>Large-scale industrial projects aimed at climate modification or restoration, coordinated by a powerful cognitive AGI.</p></article>
                 </div>
             </section>
         </main>
-        
-        <footer>
-            <div class="footer-info">
-                CORTEXTERAFACTORY.COM | TERASCALE NEURAL MANUFACTURING INTERFACE
-            </div>
-            <div class="footer-info">
-                DOMAIN STATUS: <span class="factory-status">PRODUCTION READY • ASSEMBLY LINE ACTIVE</span>
+
+        <footer class="footer-cta">
+            <div class="price">$7,000</div>
+            <div class="installments">Or 7 flexible installments.</div>
+            <div class="cta-buttons">
+                <a href="https://www.spaceship.com/s/buy/cortexterafactory.com/m91bkEdWJciuGveV" class="btn btn-buy" target="_blank" rel="noopener noreferrer">Secure Purchase</a>
+                <button id="contactBtn" class="btn btn-contact">Contact Inquiry</button>
             </div>
         </footer>
     </div>
 
     <script>
-        // 工厂网格背景绘制
-        const canvas = document.getElementById('factory-grid');
-        const ctx = canvas.getContext('2d');
-        
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-        
-        window.addEventListener('resize', resizeCanvas);
-        resizeCanvas();
-        
-        // 工厂网格点
-        class FactoryNode {
-            constructor(x, y) {
-                this.x = x;
-                this.y = y;
-                this.size = Math.random() * 4 + 2;
-                this.color = Math.random() > 0.5 ? 'rgba(255, 107, 53, 0.7)' : 'rgba(77, 139, 255, 0.7)';
-                this.pulse = Math.random() * Math.PI * 2;
-                this.speed = Math.random() * 0.03 + 0.01;
-                this.connections = [];
-            }
+        document.getElementById('contactBtn').addEventListener('click', function() {
+            const email = 'joshua369x@gmail.com';
             
-            update() {
-                this.pulse += this.speed;
-                if (this.pulse > Math.PI * 2) this.pulse = 0;
-            }
-            
-            draw() {
-                const pulseSize = Math.sin(this.pulse) * 2;
-                
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size + pulseSize, 0, Math.PI * 2);
-                ctx.fillStyle = this.color;
-                ctx.fill();
-                
-                // 绘制连接线
-                this.connections.forEach(target => {
-                    ctx.beginPath();
-                    ctx.moveTo(this.x, this.y);
-                    ctx.lineTo(target.x, target.y);
-                    
-                    // 根据距离调整透明度
-                    const dx = this.x - target.x;
-                    const dy = this.y - target.y;
-                    const distance = Math.sqrt(dx * dx + dy * dy);
-                    const opacity = Math.max(0, 0.5 - distance / 400);
-                    
-                    ctx.strokeStyle = `rgba(77, 139, 255, ${opacity})`;
-                    ctx.lineWidth = 1;
-                    ctx.stroke();
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(email).then(() => {
+                    this.textContent = 'Email Copied!';
+                    setTimeout(() => { this.textContent = 'Contact Inquiry'; }, 3000);
+                }).catch(err => {
+                    fallbackCopy(email, this);
                 });
-            }
-        }
-        
-        // 创建工厂节点
-        const nodes = [];
-        const nodeCount = Math.min(40, Math.floor((canvas.width * canvas.height) / 30000));
-        
-        for (let i = 0; i < nodeCount; i++) {
-            nodes.push(new FactoryNode(
-                Math.random() * canvas.width,
-                Math.random() * canvas.height
-            ));
-        }
-        
-        // 创建节点之间的连接（模拟工厂流水线）
-        nodes.forEach((node, index) => {
-            // 每个节点连接2-4个其他节点
-            const connectionCount = Math.floor(Math.random() * 3) + 2;
-            for (let i = 0; i < connectionCount; i++) {
-                const targetIndex = Math.floor(Math.random() * nodes.length);
-                if (targetIndex !== index && !node.connections.includes(nodes[targetIndex])) {
-                    node.connections.push(nodes[targetIndex]);
-                }
+            } else {
+                fallbackCopy(email, this);
             }
         });
-        
-        // 添加一些移动的"产品"在流水线上
-        class Product {
-            constructor() {
-                this.path = [];
-                this.progress = 0;
-                this.speed = Math.random() * 0.002 + 0.001;
-                this.size = Math.random() * 6 + 4;
-                this.color = Math.random() > 0.5 ? 'rgba(255, 215, 0, 0.9)' : 'rgba(255, 107, 53, 0.9)';
-                this.generatePath();
-            }
-            
-            generatePath() {
-                this.path = [];
-                // 随机选择3-6个节点作为路径
-                const pathLength = Math.floor(Math.random() * 4) + 3;
-                for (let i = 0; i < pathLength; i++) {
-                    const randomNode = nodes[Math.floor(Math.random() * nodes.length)];
-                    this.path.push({x: randomNode.x, y: randomNode.y});
+
+        function fallbackCopy(text, buttonElement) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.style.position = 'fixed';
+            textArea.style.top = '-9999px';
+            textArea.style.left = '-9999px';
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            try {
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    buttonElement.textContent = 'Email Copied!';
+                } else {
+                    buttonElement.textContent = 'Copy Failed';
                 }
+            } catch (err) {
+                buttonElement.textContent = 'Copy Failed';
             }
-            
-            update() {
-                this.progress += this.speed;
-                if (this.progress >= 1) {
-                    this.progress = 0;
-                    this.generatePath();
-                }
-            }
-            
-            draw() {
-                // 计算当前位置
-                const segment = Math.floor(this.progress * (this.path.length - 1));
-                const segmentProgress = (this.progress * (this.path.length - 1)) - segment;
-                
-                if (segment < this.path.length - 1) {
-                    const start = this.path[segment];
-                    const end = this.path[segment + 1];
-                    
-                    const x = start.x + (end.x - start.x) * segmentProgress;
-                    const y = start.y + (end.y - start.y) * segmentProgress;
-                    
-                    // 绘制产品
-                    ctx.beginPath();
-                    ctx.arc(x, y, this.size, 0, Math.PI * 2);
-                    ctx.fillStyle = this.color;
-                    ctx.fill();
-                    
-                    // 产品发光效果
-                    ctx.beginPath();
-                    ctx.arc(x, y, this.size + 3, 0, Math.PI * 2);
-                    ctx.strokeStyle = this.color.replace('0.9', '0.3');
-                    ctx.lineWidth = 2;
-                    ctx.stroke();
-                }
-            }
+            document.body.removeChild(textArea);
+            setTimeout(() => { buttonElement.textContent = 'Contact Inquiry'; }, 3000);
         }
-        
-        // 创建产品
-        const products = [];
-        for (let i = 0; i < 8; i++) {
-            products.push(new Product());
-        }
-        
-        // 动画循环
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
-            // 更新和绘制节点
-            nodes.forEach(node => {
-                node.update();
-                node.draw();
-            });
-            
-            // 更新和绘制产品
-            products.forEach(product => {
-                product.update();
-                product.draw();
-            });
-            
-            requestAnimationFrame(animate);
-        }
-        
-        // 等待页面加载后开始动画
-        setTimeout(() => {
-            resizeCanvas();
-            animate();
-        }, 100);
-        
-        // CTA按钮交互
-        const acquireButton = document.getElementById('acquireButton');
-        acquireButton.addEventListener('click', function() {
-            const originalText = this.textContent;
-            this.textContent = 'CONNECTING TO FACTORY CONTROL...';
-            this.style.background = 'linear-gradient(90deg, var(--industrial-blue), var(--factory-orange))';
-            
-            setTimeout(() => {
-                this.textContent = 'REDIRECTING TO COMMUNICATION CHANNEL...';
-                
-                setTimeout(() => {
-                    window.location.href = 'mailto:joshua369x@gmail.com?subject=CortexTeraFactory.com%20Acquisition%20Inquiry&body=I%20am%20interested%20in%20acquiring%20CortexTeraFactory.com%20for%20industrial-scale%20neural%20manufacturing.';
-                    
-                    setTimeout(() => {
-                        this.textContent = originalText;
-                        this.style.background = 'linear-gradient(90deg, var(--factory-orange), var(--neon-yellow))';
-                    }, 2000);
-                }, 1000);
-            }, 1500);
-        });
-        
-        // 邮箱交互
-        const contactEmail = document.querySelector('.contact-email');
-        contactEmail.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const originalText = this.textContent;
-            this.textContent = 'EMAIL COPIED TO CLIPBOARD ✓';
-            this.style.background = 'rgba(0, 255, 0, 0.2)';
-            this.style.color = '#4cff4c';
-            
-            // 复制到剪贴板
-            navigator.clipboard.writeText('joshua369x@gmail.com').then(() => {
-                setTimeout(() => {
-                    this.textContent = originalText;
-                    this.style.background = 'rgba(255, 215, 0, 0.1)';
-                    this.style.color = 'var(--neon-yellow)';
-                }, 2000);
-            });
-        });
-        
-        // 添加页面加载效果
-        window.addEventListener('load', () => {
-            document.querySelector('.logo').style.opacity = '1';
-            document.querySelector('.logo').style.transform = 'translateY(0)';
-            
-            // 为能力卡片添加延迟显示
-            const capabilities = document.querySelectorAll('.capability');
-            capabilities.forEach((cap, index) => {
-                setTimeout(() => {
-                    cap.style.opacity = '1';
-                    cap.style.transform = 'translateY(0)';
-                }, 300 + index * 200);
-            });
-        });
     </script>
+
 </body>
 </html>
